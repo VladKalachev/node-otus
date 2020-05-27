@@ -1,0 +1,24 @@
+{
+  "name": "otus",
+  "version": "1.0.0",
+  "description": "",
+  "main": " server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladKalachev/node-otus.git"
+  },
+  "keywords": [
+    "nodejs",
+    "js",
+    "typescript"
+  ],
+  "author": "Vlad Kalachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladKalachev/node-otus/issues"
+  },
+  "homepage": "https://github.com/VladKalachev/node-otus#readme"
+}
