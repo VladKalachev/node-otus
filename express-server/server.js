@@ -32,4 +32,12 @@ app.get('/person/status', (req, res) => {
     res.sendStatus(204);
 });
 
+// static middelwares
+app.use(express.static('files'));
+app.use('/static', express.static('files'));
+
+app.get(/.*/, (req, res) => {
+    console.log(111);
+})
+
 app.listen(port, () => console.log(`Example app listening on port port!`))
