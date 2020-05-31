@@ -3,9 +3,9 @@ const app = express()
 const port = 8080
 
 app.use((req, res, next) => {
-    // user: password 
-    if(res.header('Authorization') !== "Basic dXn") {
-        res.header('WWW-Authenticate', 'Base');
+    // user:password 
+    if(req.header('Authorization') !== "Basic dXNlcjpwYXNzd29yZA==") {
+        res.header('WWW-Authenticate', 'Basic');
         res.sendStatus(401);
     } else {
         next();
