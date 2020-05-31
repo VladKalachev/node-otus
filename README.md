@@ -11,3 +11,9 @@ Events, Timers, Event Loop
 
 Lesson 4
 Node best practises
+
+Lesson 5
+Testing Nodajs code
+
+Lesson 6
+HTTP Server
