@@ -2,7 +2,14 @@ const express = require('express')
 const app = express()
 const port = 8080
 
+// middlewares
 app.use((req, res, next) => {
+    console.log(req.ip);
+    console.log(req.header('User-Agent'));
+    next();
+})
+
+app.use('/person', (req, res, next) => {
     // user:password 
     if(req.header('Authorization') !== "Basic dXNlcjpwYXNzd29yZA==") {
         res.header('WWW-Authenticate', 'Basic');
