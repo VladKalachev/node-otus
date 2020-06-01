@@ -36,7 +36,7 @@ app.get('/person', (req, res) => {
 // POST / person
 app.post('/person', (req, res) => {
     console.log('Got body:', req.body);
-    res.send('Hello')
+    res.send('Hello');
 });
 
 // GET /user
