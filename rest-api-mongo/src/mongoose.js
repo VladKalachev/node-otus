@@ -11,3 +11,18 @@ db.on('error', function(err) {
 db.once('open', function() {
   console.log('Connected to MongoDB!');
 });
+
+// Schemase
+const Schema = mongoose.Schema;
+
+const Person = new Schema({
+  name: { type: String, required: true },
+  age: { type: Number, required: true }
+})
+
+// Models
+const PersonModel = mongoose.model('person', Person);
+
+module.exports = {
+  PersonModel
+}
