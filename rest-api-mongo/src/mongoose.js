@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.KEY);
+const KEY = 'mongodb+srv://vlad:yYydT3yJdvnuNgq@cluster0.2bmwl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+mongoose.connect(KEY, {useNewUrlParser: true, useUnifiedTopology: true});
 
-const db = mongoose.connections;
+const db = mongoose.connection;
 
 db.on('error', function(err) {
   console.log(err.message);

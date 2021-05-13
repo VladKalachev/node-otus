@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const PersonModel = require('./persons').PersonModel;
+const PersonModel = require('./mongoose').PersonModel;
 
 router.get('/api/person', (req, res) => {
   return PersonModel.find((err, persons) => {
@@ -50,3 +50,5 @@ router.get('/api/person/:id', function(req, res) {
     }
   })
 })
+
+module.exports = router;
