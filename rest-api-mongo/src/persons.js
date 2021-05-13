@@ -20,5 +20,33 @@ router.post('/api/person', function(req, res) {
     age: req.body.age,
   });
 
-  person.save()
+  person.save((err) => {
+    if (!err) {
+      res.statusCode = 201;
+      return res.send(person);
+    } else {
+      if(err.name === 'ValidationError') {
+        res.statusCode = 400;
+        res.send({error: 'Validation error'});
+      } else {
+        res.statusCode = 500;
+        res.send({error: 'Server error'});
+      }
+    }
+  })
 });
+
+router.get('/api/person/:id', function(req, res) {
+  return PersonModel.findById(req.params.id, (err, person) => {
+    if (!person) {
+      res.statusCode = 404;
+      return res.send({error: 'Not found'});
+    }
+    if (!err) {
+      return res.send(person);
+    } else {
+      res.statusCode = 500;
+      return res.send({error: 'Server error'});
+    }
+  })
+})

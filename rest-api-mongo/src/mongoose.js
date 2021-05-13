@@ -8,11 +8,12 @@ db.on('error', function(err) {
   console.log(err.message);
 });
 
-db.once('open', function() {
+db.once('open', function callback() {
   console.log('Connected to MongoDB!');
 });
 
 // Schemase
+
 const Schema = mongoose.Schema;
 
 const Person = new Schema({
@@ -20,8 +21,13 @@ const Person = new Schema({
   age: { type: Number, required: true }
 })
 
+// TODO: add other schemate there
+
 // Models
+
 const PersonModel = mongoose.model('person', Person);
+
+// TODO: add other modules thrre
 
 module.exports = {
   PersonModel
